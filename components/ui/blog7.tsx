@@ -95,7 +95,7 @@ const Blog7 = ({
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {posts.map((post) => (
             <Card key={post.id} className="grid grid-rows-[auto_auto_1fr_auto]">
-              <div className="aspect-[16/9] w-full overflow-hidden">
+              <div className="aspect-video w-full overflow-hidden">
                 <Link
                   href={`/blog/${post.slug}`}
                   className="transition-opacity duration-200 fade-in hover:opacity-70"
