@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { getPostBySlug, getAllPosts } from "@/lib/blog";
+import { mdxComponents } from "@/components/mdx-components";
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -12,8 +13,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
-  const post = getPostBySlug(params.slug);
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
 
   if (!post) {
     notFound();
@@ -49,8 +51,8 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             className="w-full aspect-video object-cover rounded-lg"
           />
 
-          <div className="prose prose-gray dark:prose-invert max-w-none prose-headings:font-bold prose-h1:text-3xl prose-h1:mt-8 prose-h1:mb-4 prose-h2:text-2xl prose-h2:mt-6 prose-h2:mb-3 prose-h3:text-xl prose-h3:mt-4 prose-h3:mb-2 prose-p:text-lg prose-p:leading-relaxed prose-p:my-4 prose-pre:bg-muted prose-pre:p-4 prose-pre:rounded-lg prose-pre:overflow-x-auto prose-ul:list-disc prose-ul:list-inside prose-ul:space-y-2 prose-ul:my-4 prose-ol:list-decimal prose-ol:list-inside prose-ol:space-y-2 prose-ol:my-4 prose-code:text-sm prose-code:bg-muted prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-strong:font-semibold">
-            <MDXRemote source={post.content} />
+          <div className="prose prose-gray dark:prose-invert max-w-none">
+            <MDXRemote source={post.content} components={mdxComponents} />
           </div>
         </div>
       </div>

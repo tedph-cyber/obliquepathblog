@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
 };
 
 const withMDX = createMDX({
-  // Add markdown plugins here, as desired
+  // MDX plugins will be added here if needed
 });
 
 export default withMDX(nextConfig);
