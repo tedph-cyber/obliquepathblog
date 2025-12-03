@@ -1,0 +1,84 @@
+---
+title: "Build websites in minutes with shadcn/ui"
+summary: "Learn how to quickly integrate and customize shadcn/ui components in your Next.js projects. We'll cover installation, theming, and best practices for building modern interfaces."
+label: "Tutorial"
+author: "Jane Doe"
+published: "1 Jan 2024"
+image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=600&fit=crop"
+---
+
+# Introduction
+
+Building modern web applications has never been easier with shadcn/ui. This powerful component library combines the flexibility of Radix UI with the utility-first approach of Tailwind CSS, giving you a perfect starting point for your next project.
+
+## What is shadcn/ui?
+
+shadcn/ui is not a traditional component library. Instead of installing it as a dependency, you copy and paste the components you need directly into your project. This approach gives you complete control over the code, making it easy to customize and extend components to fit your specific needs.
+
+## Key Benefits
+
+### 1. Full Control
+
+Unlike traditional component libraries, you own the code. Every component lives in your project, so you can modify it however you want without worrying about breaking changes in upstream dependencies.
+
+### 2. Accessible by Default
+
+Built on top of Radix UI primitives, all components follow WAI-ARIA guidelines and support keyboard navigation out of the box. Accessibility isn't an afterthought—it's baked into every component.
+
+### 3. Customizable with Tailwind
+
+Every component is styled with Tailwind CSS utility classes. This means you can easily adjust colors, spacing, and other design tokens to match your brand identity.
+
+## Getting Started
+
+First, set up a new Next.js project with TypeScript and Tailwind CSS:
+
+```bash
+npx create-next-app@latest my-app --typescript --tailwind
+cd my-app
+```
+
+Next, install the required dependencies:
+
+```bash
+npm install class-variance-authority clsx tailwind-merge
+npm install lucide-react @radix-ui/react-slot
+```
+
+Then initialize shadcn/ui in your project:
+
+```bash
+npx shadcn-ui@latest init
+```
+
+## Adding Components
+
+Adding components is as simple as running a single command:
+
+```bash
+npx shadcn-ui@latest add button
+npx shadcn-ui@latest add card
+npx shadcn-ui@latest add badge
+```
+
+Each component is added to your `components/ui` directory, where you can modify it as needed.
+
+## Best Practices
+
+### Keep Components Simple
+
+Don't try to make every component do everything. Start with the base component and create specialized variants as needed.
+
+### Use Composition
+
+Build complex UIs by composing smaller components together. This makes your code more maintainable and easier to test.
+
+### Leverage TypeScript
+
+All shadcn/ui components come with full TypeScript support. Use types to catch errors early and improve your developer experience.
+
+## Conclusion
+
+shadcn/ui represents a new approach to component libraries—one that prioritizes developer experience and flexibility. By giving you complete control over your components, it enables you to build exactly what you need without compromise.
+
+Start building your next project with shadcn/ui today and experience the difference!

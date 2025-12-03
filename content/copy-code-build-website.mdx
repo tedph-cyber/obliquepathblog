@@ -1,0 +1,126 @@
+---
+title: "Easily copy code to build your website"
+summary: "Explore how to create inclusive web experiences using shadcn/ui's accessible components. Discover practical tips for implementing ARIA labels, keyboard navigation, and semantic HTML."
+label: "Development"
+author: "Jane Doe"
+published: "1 Jan 2024"
+image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1200&h=600&fit=crop"
+---
+
+# The Power of Copy-Paste Development
+
+In the modern web development landscape, efficiency is key. The ability to quickly implement features without reinventing the wheel can make the difference between shipping on time and falling behind schedule.
+
+## Why Copy-Paste Matters
+
+Traditional component libraries lock you into their implementation choices. When you need to customize something, you're fighting against the library's abstractions. With shadcn/ui's copy-paste approach, you're in control from day one.
+
+## Building Accessible Web Applications
+
+Accessibility should never be an afterthought. When you copy a component from shadcn/ui, you're getting battle-tested, accessible markup that follows best practices.
+
+### ARIA Labels
+
+Every interactive component includes proper ARIA labels:
+
+```tsx
+<button
+  aria-label="Close dialog"
+  aria-describedby="dialog-description"
+>
+  <X className="h-4 w-4" />
+</button>
+```
+
+### Keyboard Navigation
+
+All components support keyboard navigation out of the box:
+
+- **Tab** - Move focus between interactive elements
+- **Enter/Space** - Activate buttons and links
+- **Escape** - Close modals and dropdowns
+- **Arrow keys** - Navigate menus and tabs
+
+### Semantic HTML
+
+Components use semantic HTML elements that screen readers understand:
+
+```tsx
+<nav aria-label="Main navigation">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+  </ul>
+</nav>
+```
+
+## Real-World Examples
+
+### Building a Dashboard
+
+Start with a layout component:
+
+```tsx
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+
+export default function Dashboard() {
+  return (
+    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      <Card>
+        <CardHeader>
+          <CardTitle>Total Revenue</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-2xl font-bold">$45,231.89</p>
+        </CardContent>
+      </Card>
+    </div>
+  )
+}
+```
+
+### Creating Forms
+
+Use accessible form components:
+
+```tsx
+import { Label } from "@/components/ui/label"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
+
+export default function ContactForm() {
+  return (
+    <form>
+      <div className="space-y-4">
+        <div>
+          <Label htmlFor="email">Email</Label>
+          <Input 
+            id="email" 
+            type="email" 
+            placeholder="you@example.com"
+            required
+          />
+        </div>
+        <Button type="submit">Submit</Button>
+      </div>
+    </form>
+  )
+}
+```
+
+## Testing Accessibility
+
+Always test your components with:
+
+1. **Keyboard only** - Can you navigate without a mouse?
+2. **Screen reader** - Does it make sense when read aloud?
+3. **Color contrast** - Are colors distinguishable for everyone?
+4. **Zoom levels** - Does it work at 200% zoom?
+
+## Performance Benefits
+
+Copy-paste components mean you only ship what you use. No bloated bundle sizes with unused code. Your users get faster page loads and better performance.
+
+## Conclusion
+
+The copy-paste approach isn't just about convenience—it's about building better, more accessible, and more maintainable applications. Start copying, start building, and ship faster than ever before.
