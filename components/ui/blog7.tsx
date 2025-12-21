@@ -44,19 +44,19 @@ const Blog7 = ({
       summary:
         "Learn how to quickly integrate and customize shadcn/ui components in your Next.js projects. We'll cover installation, theming, and best practices for building modern interfaces.",
       label: "Tutorial",
-      author: "Sarah Chen",
+      author: "Oblique Path",
       published: "1 Jan 2024",
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=450&fit=crop",
     },
     {
       id: "post-2",
-      slug: "copy-code-build-website",
-      title: "Building Accessible Web Applications",
+      slug: "beginners-guide-to-digital-marketing",
+      title: "The Beginner’s Guide to Creating a Simple Digital Marketing Strategy That Actually Works",
       summary:
-        "Explore how to create inclusive web experiences using shadcn/ui's accessible components. Discover practical tips for implementing ARIA labels, keyboard navigation, and semantic HTML.",
-      label: "Accessibility",
-      author: "Marcus Rodriguez",
-      published: "1 Jan 2024",
+        "A practical, step-by-step guide for small businesses and startups to build a simple digital marketing strategy. Learn how to set clear goals, choose the right channels, plan content, and measure results without overwhelm.",
+      label: "Marketing",
+      author: "Oblique Path",
+      published: "21 December 2025",
       image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=450&fit=crop",
     },
     {
@@ -66,7 +66,7 @@ const Blog7 = ({
       summary:
         "Dive into creating scalable design systems using Tailwind CSS and shadcn/ui. Learn how to maintain consistency while building flexible and maintainable component libraries.",
       label: "Design Systems",
-      author: "Emma Thompson",
+      author: "Oblique Path",
       published: "1 Jan 2024",
       image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&h=450&fit=crop",
     },
