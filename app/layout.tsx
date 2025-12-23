@@ -1,20 +1,35 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Poppins, Fira_Code } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import { TechBackground } from "@/components/tech-background";
+import { MouseSpotlight } from "@/components/mouse-spotlight";
+import { FloatingElements } from "@/components/floating-elements";
+import { ScrollWatcher } from "@/components/scroll-watcher";
+import { ThemeToggle } from "@/components/theme-toggle";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+});
+
+const firaCode = Fira_Code({
+  variable: "--font-fira-code",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Oblique Path Blog",
-  description: "Oblique Path's blog.",
+  description: "Oblique Path's blog - insights on automation, web development, and modern tech.",
 };
 
 export default function RootLayout({
@@ -23,11 +38,31 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} ${poppins.variable} ${firaCode.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {/* Background Effects Layer */}
+          <TechBackground variant="particles" density="medium" opacity={0.05} interactive />
+          <MouseSpotlight size={400} opacity={0.07} />
+          <FloatingElements count={6} variant="mixed" />
+          
+          {/* Content Layer */}
+          <main className="relative z-10 min-h-screen">
+            {children}
+          </main>
+          
+          {/* UI Overlays */}
+          <ScrollWatcher 
+            showProgress 
+            showScrollToTop 
+            showPercentage
+            progressPosition="top"
+            scrollToTopThreshold={300}
+          />
+          <ThemeToggle />
+        </ThemeProvider>
       </body>
     </html>
   );

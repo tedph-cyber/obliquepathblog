@@ -23,6 +23,9 @@ export default function Home() {
     })),
   };
 
-  return <Blog7 {...demoData} />;
+  return (
+    <div className="container mx-auto px-4">
+      <Blog7 {...demoData} />
+    </div>
+  );
 }
-
